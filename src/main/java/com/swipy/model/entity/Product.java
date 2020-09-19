@@ -31,12 +31,6 @@ public class Product {
     private int aging;
     private boolean isDangerous;
 
-
-
-
-
-
-
     public Product() {}
     public Product(String size, double price, String description, String tag, int aging, boolean isDangerous) {
         this.size = size;

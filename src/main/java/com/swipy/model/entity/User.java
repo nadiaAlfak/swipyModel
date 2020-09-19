@@ -62,13 +62,6 @@ public class User {
     @OneToMany(targetEntity = Support.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Support> assistants;
 
-
-
-
-
-
-
-
     public User() {}
 
     public User(boolean status, String firstName, String lastName,
@@ -85,6 +78,4 @@ public class User {
         this.type = type;
         this.password = password;
     }
-
-
 }
