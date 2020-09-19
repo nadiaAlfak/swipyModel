@@ -1,5 +1,4 @@
-package com.swip
-
+package com.swipy.model.entity;
 import lombok.Getter;
 import lombok.Setter;
 
