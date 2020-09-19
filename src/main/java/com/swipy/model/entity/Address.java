@@ -23,13 +23,22 @@ public class Address {
     private int postalCode;
     @Column(nullable = false)
     private int houseNumber;
+
+    public Address() { }
+
+    public Address(int postalCode, int houseNumber, String description) {
+        this.postalCode = postalCode;
+        this.houseNumber = houseNumber;
+        this.description = description;
+    }
+
     private String description;
     @ManyToOne
     @JoinColumn(name = "address_type_id",referencedColumnName = "id",nullable = false)
     private AddressType addressType;
 
 
-    //TODO: alaki irad nagir neveshtam
+
 
 }
 
