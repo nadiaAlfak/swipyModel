@@ -29,7 +29,7 @@ public class Address {
     private AddressType addressType;
 
 
-    //TODO: constructor naneveshty.
+    //TODO: alaki irad nagir neveshtam
 
 }
 
