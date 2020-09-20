@@ -34,7 +34,7 @@ public class OrderDetails {
     @JoinColumn(name = "post",referencedColumnName = "id",nullable = false)
     private Post post;
     @ManyToOne
-    @JoinColumn(name = "adress",referencedColumnName = "id",nullable = false)
+    @JoinColumn(name = "address",referencedColumnName = "id",nullable = false)
     private Address address;
     @ManyToOne
     @JoinColumn(name = "insurance",referencedColumnName = "id",nullable = false)
