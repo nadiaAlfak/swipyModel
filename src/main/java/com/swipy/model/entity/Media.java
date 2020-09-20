@@ -18,7 +18,7 @@ public class Media {
     private Product product;
     @Column(length = 10,nullable = false)
     private String format;
-    private boolean isprimery;
+    private boolean isprimery;//TODO: isPrimary
     @Column(length = 10,nullable = false)
     private String mediaType;
 
