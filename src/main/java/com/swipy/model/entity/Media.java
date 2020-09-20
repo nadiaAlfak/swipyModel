@@ -18,14 +18,14 @@ public class Media {
     private Product product;
     @Column(length = 10,nullable = false)
     private String format;
-    private boolean isprimery;//TODO: isPrimary
+    private boolean isPrimery;
     @Column(length = 10,nullable = false)
     private String mediaType;
 
     public Media(String format, String address, boolean isprimery,String mediaType) {
         this.format = format;
         this.address = address;
-        this.isprimery = isprimery;
+        this.isPrimery = isprimery;
         this.mediaType = mediaType;
     }
 
