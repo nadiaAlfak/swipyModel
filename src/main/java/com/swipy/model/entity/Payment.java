@@ -14,7 +14,7 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(length = 20,nullable = false)
-    private String curdType;
+    private String curdType;//TODO: card
 
     public Payment() {
     }

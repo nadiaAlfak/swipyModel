@@ -37,8 +37,5 @@ public class Address {
     @JoinColumn(name = "address_type_id",referencedColumnName = "id",nullable = false)
     private AddressType addressType;
 
-
-
-
 }
 
