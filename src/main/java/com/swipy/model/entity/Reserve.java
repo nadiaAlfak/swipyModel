@@ -27,16 +27,14 @@ public class Reserve {
     @Column(length = 50)
     private String status;
     @Column(length = 50)
-    private String peymentStatus;
-
+    private String paymentStatus;
 
     public Reserve(Date startDate, Date endDate, String status, String peymentStatus) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
-        this.peymentStatus = peymentStatus;
+        this.paymentStatus = peymentStatus;
     }
-
 
     public Reserve() {
     }
