@@ -14,13 +14,13 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(length = 20,nullable = false)
-    private String curdType;//TODO: card
+    private String cardType;
 
     public Payment() {
     }
 
     public Payment(String curdType) {
-        this.curdType = curdType;
+        this.cardType = curdType;
     }
 
 }
