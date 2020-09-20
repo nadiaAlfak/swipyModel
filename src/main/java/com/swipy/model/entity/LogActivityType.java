@@ -21,6 +21,7 @@ public class LogActivityType {
     @OneToMany(targetEntity = ProductLog.class, mappedBy = "log_activity_type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ProductLog> productLogs;
 
+
     public LogActivityType(String name) {
         this.name = name;
     }

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -15,6 +16,8 @@ public class AddressType {
     private UUID id;
     @Column(length = 30,nullable = false)
     private String name;
+    @OneToMany(targetEntity = Address.class, mappedBy = "address_type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Address> addresses;
 
     public AddressType(String name) {
         this.name = name;

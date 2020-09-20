@@ -22,6 +22,7 @@ public class Media {
     @Column(length = 10,nullable = false)
     private String mediaType;
 
+
     public Media(String format, String address, boolean isprimery,String mediaType) {
         this.format = format;
         this.address = address;

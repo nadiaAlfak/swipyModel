@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -28,6 +29,8 @@ public class Reserve {
     private String status;
     @Column(length = 50)
     private String paymentStatus;
+    @OneToMany(targetEntity = OrderDetails.class, mappedBy = "reserve", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetails> orderDetails;
 
     public Reserve(Date startDate, Date endDate, String status, String peymentStatus) {
         this.startDate = startDate;

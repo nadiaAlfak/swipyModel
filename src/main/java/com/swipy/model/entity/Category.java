@@ -19,6 +19,7 @@ public class Category {
     @OneToMany(targetEntity = SubCategory.class, mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<SubCategory> subCategories;
 
+
     public Category(String name) {
         this.name = name;
     }

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +21,9 @@ public class Insurance {
     private double price;
     @Column(nullable = false)
     private String description;
+    @OneToMany(targetEntity = OrderDetails.class, mappedBy = "insurance", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetails> orderDetails;
+
 
     public Insurance(double price, String description) {
         this.price = price;

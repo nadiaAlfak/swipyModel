@@ -25,4 +25,5 @@ public class ProductLog {
     private String description;
 
 
+
 }

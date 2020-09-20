@@ -30,6 +30,20 @@ public class Product {
     private String tag;
     private int aging;
     private boolean isDangerous;
+    @OneToMany(targetEntity = Reserve.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Reserve> reserves;
+    @OneToMany(targetEntity = Basket.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Basket> baskets;
+    @OneToMany(targetEntity = OrderDetails.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetails> orderDetails;
+    @OneToMany(targetEntity = ProductLog.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ProductLog> productLogs;
+    @OneToMany(targetEntity = Insurance.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Insurance> insurances;
+    @OneToMany(targetEntity = Media.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Media> medias ;
+    @OneToMany(targetEntity = Post.class, mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Post> posts;
 
     public Product() {}
     public Product(String size, double price, String description, String tag, int aging, boolean isDangerous) {

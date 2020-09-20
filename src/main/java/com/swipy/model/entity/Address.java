@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,6 +24,18 @@ public class Address {
     private int postalCode;
     @Column(nullable = false)
     private int houseNumber;
+    @OneToMany(targetEntity = OrderDetails.class, mappedBy = "address", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetails> orderDetails;
+    @OneToMany(targetEntity = Post.class, mappedBy = "address", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Post> addressRecive;
+    @OneToMany(targetEntity = Post.class, mappedBy = "address", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Post> addressSend;
+
+
+
+
+
+
 
     public Address() { }
 

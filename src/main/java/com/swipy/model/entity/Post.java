@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -40,6 +41,9 @@ public class Post {
     @Column(length = 200,nullable = false)
     private String reciver;
     private String description;
+    @OneToMany(targetEntity = OrderDetails.class, mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetails> orderDetails;
+
 
     public Post(String company, String trakingNumber, Date anounce,
                 Date startDate, Date reciveDate, Date actualReciveDate,
