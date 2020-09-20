@@ -14,8 +14,16 @@ public class City {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @ManyToOne
-    @JoinColumn(name = "State_id",referencedColumnName = "id",nullable = false)
+    @JoinColumn(name = "state_id",referencedColumnName = "id",nullable = false)
     private State state;
     @Column(length = 100,nullable = false)
     private String name;
+    public City(String name) {
+        this.name = name;
+    }
+
+    public City() {
+    }
+
+
 }
