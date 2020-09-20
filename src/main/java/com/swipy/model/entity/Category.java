@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -15,6 +16,8 @@ public class Category {
     private UUID id;
     @Column(length = 100,nullable = false)
     private String name;
+    @OneToMany(targetEntity = SubCategory.class, mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<SubCategory> subCategories;
 
     public Category(String name) {
         this.name = name;
