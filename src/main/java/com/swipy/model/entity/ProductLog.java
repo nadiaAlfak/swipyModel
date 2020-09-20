@@ -24,4 +24,5 @@ public class ProductLog {
     private Date time;
     private String description;
 
+
 }
