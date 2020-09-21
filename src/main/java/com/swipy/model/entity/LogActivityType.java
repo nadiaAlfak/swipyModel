@@ -16,11 +16,10 @@ public class LogActivityType {
     private UUID id;
     @Column(length = 50, nullable = false)
     private String name;
-    @OneToMany(targetEntity = UserLog.class, mappedBy = "log_activity_type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = UserLog.class, mappedBy = "logActivityType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserLog> userLogs;
-    @OneToMany(targetEntity = ProductLog.class, mappedBy = "log_activity_type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = ProductLog.class, mappedBy = "logActivityType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ProductLog> productLogs;
-
 
     public LogActivityType(String name) {
         this.name = name;
@@ -29,4 +28,3 @@ public class LogActivityType {
     public LogActivityType() {
     }
 }
-

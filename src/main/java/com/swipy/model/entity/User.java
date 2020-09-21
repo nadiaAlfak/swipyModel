@@ -45,9 +45,9 @@ public class User {
     private List<OrderDetails> orderDetails;
     @OneToMany(targetEntity = Basket.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Basket> baskets;
-    @OneToMany(targetEntity = Post.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Post.class,mappedBy = "sender",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Post> senders;
-    @OneToMany(targetEntity = Post.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Post.class,mappedBy = "userReciver",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Post> receivers;
     @OneToMany(targetEntity = UserLog.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<UserLog> userLogs;
@@ -57,9 +57,9 @@ public class User {
     private List<AccExpensis> accExpenses;
     @OneToMany(targetEntity = Notification.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Notification> notifications;
-    @OneToMany(targetEntity = Support.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Support.class,mappedBy = "caller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Support> callers;
-    @OneToMany(targetEntity = Support.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Support.class,mappedBy = "assistant",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Support> assistants;
 
     public User() {}

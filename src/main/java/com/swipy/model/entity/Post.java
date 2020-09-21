@@ -22,14 +22,14 @@ public class Post {
     @JoinColumn(name = "address_send_id", referencedColumnName = "id", nullable = false)
     private Address addressSend;
     @ManyToOne
-    @JoinColumn(name ="address_recive_id",referencedColumnName = "id",nullable = false)
+    @JoinColumn(name ="address_recieve_id",referencedColumnName = "id",nullable = false)
     private Address addressRecive;
     @ManyToOne
     @JoinColumn(name ="sender_id",referencedColumnName = "id",nullable = false)
     private User sender;
     @ManyToOne
-    @JoinColumn(name ="reserve_id",referencedColumnName = "id",nullable = false)
-    private Reserve reserve;
+    @JoinColumn(name ="reciver_id",referencedColumnName = "id",nullable = false)
+    private User userReciver;
     @Column(length =30,nullable = false )
     private String company;
     @Column(length = 200,nullable = false)

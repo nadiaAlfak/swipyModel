@@ -19,7 +19,7 @@ public class SubCategory {
     private Category category;
     @Column(length = 100,nullable = false)
     private String name;
-    @OneToMany(targetEntity = Product.class, mappedBy = "sub_category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Product.class, mappedBy = "subCategory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products;
 
     public SubCategory(String name) {

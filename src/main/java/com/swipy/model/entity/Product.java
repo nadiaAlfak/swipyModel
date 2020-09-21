@@ -54,7 +54,4 @@ public class Product {
         this.aging = aging;
         this.isDangerous = isDangerous;
     }
-
-
-
 }

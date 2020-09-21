@@ -10,7 +10,6 @@ import java.util.UUID;
 @Entity
 @Setter
 @Getter
-
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,12 +19,9 @@ public class Country {
     @OneToMany(targetEntity = State.class, mappedBy = "country", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<State> states;
 
-    public Country() {
-    }
+    public Country() { }
 
     public Country(String name) {
         this.name = name;
     }
-
-
 }

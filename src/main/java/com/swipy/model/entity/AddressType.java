@@ -16,7 +16,7 @@ public class AddressType {
     private UUID id;
     @Column(length = 30,nullable = false)
     private String name;
-    @OneToMany(targetEntity = Address.class, mappedBy = "address_type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Address.class, mappedBy = "addressType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Address> addresses;
 
     public AddressType(String name) {
