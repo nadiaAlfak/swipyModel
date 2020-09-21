@@ -48,7 +48,7 @@ public class User {
     @OneToMany(targetEntity = Post.class,mappedBy = "sender",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Post> senders;
     @OneToMany(targetEntity = Post.class,mappedBy = "userReciver",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Post> receivers;
+    private List<Post> userReciver;
     @OneToMany(targetEntity = UserLog.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<UserLog> userLogs;
     @OneToMany(targetEntity = AccTransaction.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)

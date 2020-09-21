@@ -20,6 +20,4 @@ public class Support {
     @JoinColumn(name ="assistant_id",referencedColumnName = "id",nullable = false)
     private User assistant;
     private String description;
-
-
 }
