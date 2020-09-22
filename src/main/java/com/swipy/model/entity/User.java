@@ -17,22 +17,22 @@ public class User {
     private UUID id;
     @Column(nullable = false)
     private boolean status;
-    @Column(length = 100,nullable = false)
+    @Column(length = 100, nullable = false)
     private String firstName;
-    @Column(length = 100,nullable = false)
+    @Column(length = 100, nullable = false)
     private String lastName;
     @Column(nullable = false)
     private int gender;
-    @Column(length = 500,nullable = false)
+    @Column(length = 500, nullable = false)
     private String email;
     @Column(nullable = false)
     private Date dateOfBirth;
-    @Column(length = 200,nullable = true)
+    @Column(length = 200)
     private String occupation;
-    @Column(length = 50,nullable = true)
+    @Column(length = 50)
     private String phone;
     private int type;
-    @Column(length = 500,nullable = false)
+    @Column(length = 500, nullable = false)
     private String password;
 
     @OneToMany(targetEntity = Address.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -45,24 +45,25 @@ public class User {
     private List<OrderDetails> orderDetails;
     @OneToMany(targetEntity = Basket.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Basket> baskets;
-    @OneToMany(targetEntity = Post.class,mappedBy = "sender",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Post.class, mappedBy = "sender", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Post> senders;
-    @OneToMany(targetEntity = Post.class,mappedBy = "userReciver",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Post> userReciver;
-    @OneToMany(targetEntity = UserLog.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Post.class, mappedBy = "userReciver", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Post> userRecivers;
+    @OneToMany(targetEntity = UserLog.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserLog> userLogs;
-    @OneToMany(targetEntity = AccTransaction.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = AccTransaction.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<AccTransaction> accTransactions;
-    @OneToMany(targetEntity = AccExpensis.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = AccExpensis.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<AccExpensis> accExpenses;
-    @OneToMany(targetEntity = Notification.class,mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Notification.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Notification> notifications;
-    @OneToMany(targetEntity = Support.class,mappedBy = "caller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Support.class, mappedBy = "caller", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Support> callers;
-    @OneToMany(targetEntity = Support.class,mappedBy = "assistant",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Support.class, mappedBy = "assistant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Support> assistants;
 
-    public User() {}
+    public User() {
+    }
 
     public User(boolean status, String firstName, String lastName,
                 int gender, String email, Date dateOfBirth, String occupation,
