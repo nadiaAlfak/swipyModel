@@ -16,10 +16,10 @@ public class AddressController {
     }
 
     @PostMapping("/newAddress")
-    public boolean register(@RequestBody String newUser){
+    public boolean register(@RequestBody String newAddress){
         Gson gson=new Gson();
-        AddressDto addressDto =gson.fromJson(newUser,AddressDto.class);
-        return addressCRUD.save(Address);
+        AddressDto addressDto =gson.fromJson(newAddress,AddressDto.class);
+        return addressCRUD.save(addressDto);
 
 
     }

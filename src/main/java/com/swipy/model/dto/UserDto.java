@@ -9,7 +9,6 @@ import java.util.UUID;
 @Getter
 public class UserDto {
     private UUID id;
-
     private boolean status;
     private String firstName;
     private String lastName;
